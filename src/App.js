@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import AddProduct from './AddProduct';
 import ProductItem from './ProductItem';
+
+//import StateData from './containers/StateData.js';
+import StateData from './containers/containers.js';
+import InputContainers from './containers/InputContainers';
+
+// import { createStore } from 'redux'
+// function counter (state=0, action) {
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return state + 1;
+//     case 'DECREMENT':
+//       return state - 1;
+//     default:
+//       return state;
+//   }
+// }
+
+// let store = createStore(counter);
+
+// store.subscribe(() =>
+//   console.log(store.getState())
+// )
+
+// store.dispatch({ type: 'INCREMENT' });
+// store.dispatch({ type: 'INCREMENT' });
+// store.dispatch({ type: 'INCREMENT' });
 
 const products = [
   {
@@ -100,6 +127,8 @@ class App extends Component {
             )
           })
         }
+        <StateData />
+        <InputContainers />
       </div>
     );
   }
