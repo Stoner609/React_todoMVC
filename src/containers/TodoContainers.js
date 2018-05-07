@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { cart_insert } from '../actions/actions.js';
-import Cart from '../components/Cart.js'
+import { todo_insert } from '../actions/actions.js';
+import Todo from '../components/todoComponent.js';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onAdd: (x) => {
-            console.log('Hello Cart containers', x);
-            dispatch(cart_insert(x));
+            console.log('Hello Todo containers', x);
+            dispatch(todo_insert(x));
         }
     }
 }
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Cart);
+)(Todo);

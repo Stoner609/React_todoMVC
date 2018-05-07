@@ -6,9 +6,9 @@ import './App.css';
 import AddProduct from './AddProduct';
 import ProductItem from './ProductItem';
 
-import StateData from './containers/containers.js';
+import CalculatorContainers from './containers/containers.js';
 import InputContainers from './containers/InputContainers';
-import Cart from './containers/Cartcontainers'
+import TodoContainers from './containers/TodoContainers'
 
 // import { createStore } from 'redux'
 // function counter (state=0, action) {
@@ -45,15 +45,21 @@ const products = [
 
 localStorage.setItem('products', JSON.stringify(products));
 
-const StateDataRouter = () => (
+const CalculatorRouter = () => (
   <div>
-    <StateData />
+    <CalculatorContainers />
   </div>
 );
 
 const InputRouter = () => (
   <div>
     <InputContainers />
+  </div>
+)
+
+const todoRouter = () => (
+  <div>
+    <TodoContainers />
   </div>
 )
 
@@ -130,16 +136,16 @@ class App extends Component {
                 <Link to="/">計數器</Link>
               </li>
               <li>
-                <Link to="/Inputrouter">輸入框</Link>
+                <Link to="/input">輸入框</Link>
               </li>
               <li>
-                <Link to="/cart">購物車</Link>
+                <Link to="/todo">購物車</Link>
               </li>
             </ul>
             <hr />
-            <Route exact path="/" component={StateDataRouter} />
-            <Route path="/Inputrouter" component={InputRouter} />
-            <Route path="/cart" component={Cart} />
+            <Route exact path="/" component={CalculatorRouter} />
+            <Route path="/input" component={InputRouter} />
+            <Route path="/todo" component={todoRouter} />
           </div>
         </Router>
         <hr />

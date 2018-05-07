@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import calculatorRedux from './calculatorRedux';
-import valueRedux from './inputRedux';
-
+import calculatorReducer from './calculatorReducer';
+import inputReducer from './inputReducer';
+import todoReducer from './todoReducer';
 
 export default combineReducers({
-    calculatorRedux,
-    valueRedux,
+    calculatorReducer,
+    inputReducer,
+    todoReducer
 });

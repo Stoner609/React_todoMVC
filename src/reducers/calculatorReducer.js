@@ -4,7 +4,7 @@ const initialData = {
     value: 0,
 }
 
-function calculatorRedux(state = initialData, action) {
+function calculatorReducer(state = initialData, action) {
     console.log('A ', state, action.context);
     switch (action.type) {
         case PLUS:
@@ -24,4 +24,4 @@ function calculatorRedux(state = initialData, action) {
     }
 }
 
-export default calculatorRedux;
+export default calculatorReducer;

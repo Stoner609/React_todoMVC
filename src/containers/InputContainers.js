@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { insert } from '../actions/actions.js';
-import InputValue from '../components/InputValue';
+import Input from '../components/inputComponent';
 
 const mapStateToProps = (state) => {
     console.log('來自 containers', state);
     return {
-        value: state.valueRedux.context
+        value: state.inputReducer.context
     }
 }
 
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(InputValue);
+)(Input);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StateBoard({ value, onClickAdd, onClickSub }) {
+function Calculator({ value, onClickAdd, onClickSub }) {
     return (
         <div>
             <h1>{value}</h1>
@@ -10,4 +10,4 @@ function StateBoard({ value, onClickAdd, onClickSub }) {
     );
 }
 
-export default StateBoard;
+export default Calculator;

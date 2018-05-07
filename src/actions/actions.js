@@ -29,10 +29,10 @@ export const insert = (context) => {
 }
 
 //
-export const cart_insert = (product) => {
-    console.log('Cart action', product);
+export const todo_insert = (product) => {
+    console.log('Todo action', product);
     return {
-        type: types.CART_INSERT,
+        type: types.TODO_INSERT,
         product: product
     }
 } 

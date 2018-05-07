@@ -10,7 +10,7 @@ import React from 'react';
 //     )
 // }
 
-class InputValue extends React.Component {
+class Input extends React.Component {
     constructor(props) {
         super(props);
         this.Hello = this.Hello.bind(this);
@@ -39,4 +39,4 @@ class InputValue extends React.Component {
     }
 }
 
-export default InputValue;
+export default Input;

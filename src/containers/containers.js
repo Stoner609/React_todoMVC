@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import StateBoard from '../components/StateDate.js';
 import { add, sub } from '../actions/actions.js';
+import Calculator from '../components/calculatorComponent.js';
 
 const mapStateToProps = (state) => {
     return {
-        value: state.calculatorRedux.value
+        value: state.calculatorReducer.value
     }
 }
 
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(StateBoard);
+)(Calculator);

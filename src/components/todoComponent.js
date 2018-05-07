@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Cart extends React.Component {
+class todo extends React.Component {
     constructor(props) {
         super(props);
-        console.log('cccc', props)
+        console.log('cccc', props);
     }
 
     render() {
@@ -15,4 +15,4 @@ class Cart extends React.Component {
     }
 }
 
-export default Cart;
+export default todo;
