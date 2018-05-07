@@ -4,7 +4,7 @@ import { add, sub } from '../actions/actions.js';
 
 const mapStateToProps = (state) => {
     return {
-        value: state.calculator.value
+        value: state.calculatorRedux.value
     }
 }
 

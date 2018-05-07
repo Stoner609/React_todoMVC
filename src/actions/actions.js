@@ -1,20 +1,16 @@
 // action types 
-export const PLUS = 'PLUS';
-export const MINUS = 'MINUS';
-export const INSERT = 'INSERT';
-
-export const CART_INSERT = 'CART_INSERT';
+import * as types from '../constants/ActionType.js';
 
 // action creators
 export function add() {
     return {
-        type: PLUS,
+        type: types.PLUS,
         num: 1
     }
 };
 export function sub() {
     return {
-        type: MINUS,
+        type: types.MINUS,
         num: 1
     }
 };
@@ -27,7 +23,7 @@ export function sub() {
 export const insert = (context) => { 
     console.log('來自 action', context);
     return {
-        type: INSERT,
+        type: types.INSERT,
         context: context
     }
 }
@@ -36,7 +32,7 @@ export const insert = (context) => {
 export const cart_insert = (product) => {
     console.log('Cart action', product);
     return {
-        type: CART_INSERT,
+        type: types.CART_INSERT,
         product: product
     }
 } 

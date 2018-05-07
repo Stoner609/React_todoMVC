@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { PLUS, MINUS, INSERT, CART_INSERT } from '../actions/actions.js';
+import * as types from '../constants/ActionType.js';
 
 const initialData = {
     value: 0,
@@ -19,7 +19,7 @@ const initialCart = [
 
 function calculator(state = initialData, action) {
     switch (action.type) {
-        case PLUS:
+        case types.PLUS:
             // return Object.assign({}, state, {
             //     value: state.value + action.num
             // });
@@ -27,7 +27,7 @@ function calculator(state = initialData, action) {
                 ...state,
                 value: state.value + action.num
             }
-        case MINUS:
+        case types.MINUS:
             return Object.assign({}, state, {
                 value: state.value - action.num
             });
@@ -39,7 +39,7 @@ function calculator(state = initialData, action) {
 const valueRedux = (state = initialData, action) => {
     console.log('來自 reducer', state, action.context);
     switch (action.type) {
-        case INSERT:
+        case types.INSERT:
             return {
                 ...state,
                 context: action.context
@@ -52,7 +52,7 @@ const valueRedux = (state = initialData, action) => {
 // 
 const cartRedux = (state = initialCart, action) => {
     switch (action.type) {
-        case CART_INSERT:
+        case types.CART_INSERT:
             return state;
             break;
         default:
