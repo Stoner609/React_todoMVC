@@ -3,6 +3,7 @@ import { insert } from '../actions/actions.js';
 import InputValue from '../components/InputValue';
 
 const mapStateToProps = (state) => {
+    console.log('來自 containers', state)
     return {
         value: state.valueinput.context
     }
@@ -11,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onChangeValue: (x) => {
-            console.log(x);
+            // console.log(x);
             dispatch(insert(x));
         }   
     }

@@ -17,7 +17,15 @@ export function sub() {
     }
 };
 
-export const insert = (context) => ({
-    type: INSERT,
-    context: context
-})
+// export const insert = (context) => ({
+//     type: INSERT,
+//     context: context
+// })
+
+export const insert = (context) => { 
+    console.log('來自 action', context);
+    return {
+        type: INSERT,
+        context: context
+    }
+}

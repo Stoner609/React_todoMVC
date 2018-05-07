@@ -26,6 +26,7 @@ function calculator(state = initialData, action) {
 }
 
 const valueinput = (state = initialData, action) => {
+    console.log('來自 reducer', state, action.context)
     switch(action.type) {
         case INSERT:
             return {
