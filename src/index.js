@@ -8,7 +8,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import calculatorApp from './reducers/reducers';
 let store = createStore(calculatorApp);
-console.log(store.getState());
+console.log('Start 1 ', store.getState())
+// console.log(store.getState());
 
 ReactDOM.render(
     <Provider store={store}>

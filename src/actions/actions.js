@@ -1,7 +1,6 @@
 // action types 
 export const PLUS = 'PLUS';
 export const MINUS = 'MINUS';
-
 export const INSERT = 'INSERT';
 
 // action creators
@@ -18,9 +17,7 @@ export function sub() {
     }
 };
 
-export function insert(context) {
-    return {
-        type: INSERT,
-        context: context
-    }
-}
+export const insert = (context) => ({
+    type: INSERT,
+    context: context
+})

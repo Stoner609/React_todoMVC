@@ -4,7 +4,6 @@ import './App.css';
 import AddProduct from './AddProduct';
 import ProductItem from './ProductItem';
 
-//import StateData from './containers/StateData.js';
 import StateData from './containers/containers.js';
 import InputContainers from './containers/InputContainers';
 

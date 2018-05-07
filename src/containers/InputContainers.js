@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import InputValue from '../components/InputValue';
 import { insert } from '../actions/actions.js';
+import InputValue from '../components/InputValue';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onChangeValue: (x) => {
-            //console.log(x.value);
-            dispatch(insert(x.value));
+            console.log(x);
+            dispatch(insert(x));
         }   
     }
 }

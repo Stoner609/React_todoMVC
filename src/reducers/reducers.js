@@ -2,17 +2,13 @@ import { combineReducers } from 'redux';
 import { PLUS, MINUS, INSERT } from '../actions/actions.js';
 
 const initialData = {
-    value: 0
-}
-
-const initialValue = {
+    value: 0,
     context: ''
 }
 
 function calculator(state = initialData, action) {
     switch (action.type) {
         case PLUS:
-            console.log("++");
             // return Object.assign({}, state, {
             //     value: state.value + action.num
             // });
@@ -21,7 +17,6 @@ function calculator(state = initialData, action) {
                 value: state.value + action.num
             }
         case MINUS:
-            console.log("--");
             return Object.assign({}, state, {
                 value: state.value - action.num
             });
@@ -30,7 +25,7 @@ function calculator(state = initialData, action) {
     }
 }
 
-function valueinput(state = initialValue, action) {
+const valueinput = (state = initialData, action) => {
     switch(action.type) {
         case INSERT:
             return {
@@ -41,6 +36,7 @@ function valueinput(state = initialValue, action) {
             return state;
     }
 }
+
 
 const calculatorApp = combineReducers({
     calculator,
