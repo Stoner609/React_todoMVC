@@ -1,10 +1,21 @@
 import { combineReducers } from 'redux';
-import { PLUS, MINUS, INSERT } from '../actions/actions.js';
+import { PLUS, MINUS, INSERT, CART_INSERT } from '../actions/actions.js';
 
 const initialData = {
     value: 0,
     context: ''
 }
+
+const initialCart = [
+    {
+        name: '123',
+        price: 500
+    }, 
+    {
+        name: '321', 
+        price: 1000
+    }
+]
 
 function calculator(state = initialData, action) {
     switch (action.type) {
@@ -25,23 +36,34 @@ function calculator(state = initialData, action) {
     }
 }
 
-const valueinput = (state = initialData, action) => {
-    console.log('來自 reducer', state, action.context)
-    switch(action.type) {
+const valueRedux = (state = initialData, action) => {
+    console.log('來自 reducer', state, action.context);
+    switch (action.type) {
         case INSERT:
             return {
                 ...state,
                 context: action.context
             }
-        default: 
+        default:
             return state;
     }
 }
 
+// 
+const cartRedux = (state = initialCart, action) => {
+    switch (action.type) {
+        case CART_INSERT:
+            return state;
+            break;
+        default:
+            return state;
+    }
+}
 
 const calculatorApp = combineReducers({
     calculator,
-    valueinput
+    valueRedux,
+    cartRedux
 });
 
 export default calculatorApp;

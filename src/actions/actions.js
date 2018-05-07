@@ -3,6 +3,8 @@ export const PLUS = 'PLUS';
 export const MINUS = 'MINUS';
 export const INSERT = 'INSERT';
 
+export const CART_INSERT = 'CART_INSERT';
+
 // action creators
 export function add() {
     return {
@@ -29,3 +31,12 @@ export const insert = (context) => {
         context: context
     }
 }
+
+//
+export const cart_insert = (product) => {
+    console.log('Cart action', product);
+    return {
+        type: CART_INSERT,
+        product: product
+    }
+} 

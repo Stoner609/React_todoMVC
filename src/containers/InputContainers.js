@@ -3,9 +3,9 @@ import { insert } from '../actions/actions.js';
 import InputValue from '../components/InputValue';
 
 const mapStateToProps = (state) => {
-    console.log('來自 containers', state)
+    console.log('來自 containers', state);
     return {
-        value: state.valueinput.context
+        value: state.valueRedux.context
     }
 }
 

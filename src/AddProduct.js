@@ -21,7 +21,6 @@ class AddProduct extends Component {
                 <input placeholder="name" ref={nameInput => this.nameInput = nameInput}  />
                 <input placeholder="price" ref={priceInput => this.priceInput = priceInput} />
                 <button>Add Product</button>
-                <hr />
             </form>
         );
     }

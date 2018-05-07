@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import './App.css';
 
 import AddProduct from './AddProduct';
@@ -6,6 +8,7 @@ import ProductItem from './ProductItem';
 
 import StateData from './containers/containers.js';
 import InputContainers from './containers/InputContainers';
+import Cart from './containers/Cartcontainers'
 
 // import { createStore } from 'redux'
 // function counter (state=0, action) {
@@ -42,6 +45,17 @@ const products = [
 
 localStorage.setItem('products', JSON.stringify(products));
 
+const StateDataRouter = () => (
+  <div>
+    <StateData />
+  </div>
+);
+
+const InputRouter = () => (
+  <div>
+    <InputContainers />
+  </div>
+)
 
 class App extends Component {
   constructor(props) {
@@ -69,9 +83,9 @@ class App extends Component {
   onAdd(name, price) {
     const products = this.getProducts();
 
-    products.push({ 
-      name, 
-      price 
+    products.push({
+      name,
+      price
     });
 
     this.setState({
@@ -95,7 +109,7 @@ class App extends Component {
     let products = this.getProducts();
 
     products = products.map(product => {
-      if (product.name === originalName){
+      if (product.name === originalName) {
         product.name = name;
         product.price = price
       }
@@ -103,15 +117,35 @@ class App extends Component {
       return product;
     });
 
-    this.setState({products});
+    this.setState({ products });
   }
 
   render() {
     return (
       <div className="App">
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/">計數器</Link>
+              </li>
+              <li>
+                <Link to="/Inputrouter">輸入框</Link>
+              </li>
+              <li>
+                <Link to="/cart">購物車</Link>
+              </li>
+            </ul>
+            <hr />
+            <Route exact path="/" component={StateDataRouter} />
+            <Route path="/Inputrouter" component={InputRouter} />
+            <Route path="/cart" component={Cart} />
+          </div>
+        </Router>
+        <hr />
         <h1>Products Manager</h1>
 
-        <AddProduct 
+        <AddProduct
           onAdd={this.onAdd}
         />
         {
@@ -126,8 +160,6 @@ class App extends Component {
             )
           })
         }
-        <StateData />
-        <InputContainers />
       </div>
     );
   }
