@@ -6,7 +6,7 @@ import './App.css';
 import AddProduct from './AddProduct';
 import ProductItem from './ProductItem';
 
-import CalculatorContainers from './containers/containers.js';
+import CalculatorContainers from './containers/CalculatorContainers.js';
 import InputContainers from './containers/InputContainers';
 import TodoContainers from './containers/TodoContainers'
 
