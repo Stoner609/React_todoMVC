@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { todo_insert } from '../actions/actions.js';
+import { todo_insert, todo_edit } from '../actions/actions.js';
 import Todo from '../components/todoComponent.js';
 
 const mapStateToProps = (state) => {
@@ -12,8 +12,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onInsert: (name, price) => {
-            console.log('Hello Todo containers', name, price);
             dispatch(todo_insert(name, price));
+        },
+        onEditSubmit: (name, price, originalName) => {
+            dispatch(todo_edit(name, price, originalName));
         }
     }
 }

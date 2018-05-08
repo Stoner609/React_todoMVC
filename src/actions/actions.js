@@ -34,3 +34,12 @@ export const todo_insert = (name, price) => {
         price: price
     }
 }
+
+export const todo_edit = (name, price, originalName) => {
+    return {
+        type: types.TODO_EDIT,
+        name: name,
+        price: price,
+        originalName: originalName
+    }
+}

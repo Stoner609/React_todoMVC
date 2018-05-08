@@ -27,6 +27,7 @@ class todo extends React.Component {
                             <List 
                                 key={product.name}
                                 {...product}
+                                onEditSubmit={this.props.onEditSubmit}
                             />
                         )
                     })

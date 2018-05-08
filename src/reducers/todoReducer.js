@@ -1,4 +1,4 @@
-import { TODO_INSERT } from '../constants/ActionType.js';
+import { TODO_INSERT, TODO_EDIT } from '../constants/ActionType.js';
 
 const initialData = [
     {
@@ -11,7 +11,7 @@ const initialData = [
     }
 ]
 
-const todoItem = (state = {}, action, sss) => {
+const todoItem = (state = {}, action) => {
     switch (action.type) {
         case TODO_INSERT:
             return {
@@ -36,6 +36,16 @@ const todoReducer = (state = initialData, action) => {
                 //     price: action.price
                 // }
             ]
+            break;
+        case TODO_EDIT:
+            let product = state.map(product => {
+                if (product.name === action.originalName) {
+                    product.name = action.name,
+                    product.price = action.price
+                }
+                return product
+            })
+            return product
             break;
         default:
             return state;
