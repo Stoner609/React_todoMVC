@@ -1,7 +1,5 @@
 import { TODO_INSERT, TODO_EDIT, TODO_DELETE } from '../constants/ActionType.js';
 
-console.log('123');
-
 const initialData = [
 	{
 		name: 'iPad',
@@ -23,7 +21,6 @@ const todoItem = (state = {}, action) => {
 		default:
 			return state;
 	}
-
 }
 
 const todoReducer = (state = initialData, action) => {

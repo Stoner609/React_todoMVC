@@ -1,49 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 import './App.css';
-
 // import AddProduct from './AddProduct';
 // import ProductItem from './ProductItem';
-
 import CalculatorContainers from './containers/CalculatorContainers.js';
 import InputContainers from './containers/InputContainers';
 import TodoContainers from './containers/TodoContainers'
-
-// import { createStore } from 'redux'
-// function counter (state=0, action) {
-//   switch (action.type) {
-//     case 'INCREMENT':
-//       return state + 1;
-//     case 'DECREMENT':
-//       return state - 1;
-//     default:
-//       return state;
-//   }
-// }
-
-// let store = createStore(counter);
-
-// store.subscribe(() =>
-//   console.log(store.getState())
-// )
-
-// store.dispatch({ type: 'INCREMENT' });
-// store.dispatch({ type: 'INCREMENT' });
-// store.dispatch({ type: 'INCREMENT' });
-
-const products = [
-  {
-    name: 'iPad',
-    price: 200
-  },
-  {
-    name: 'iPhone',
-    price: 650
-  }
-]
-
-localStorage.setItem('products', JSON.stringify(products));
 
 const CalculatorRouter = () => (
   <div>

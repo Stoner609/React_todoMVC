@@ -14,9 +14,7 @@ class Input extends React.Component {
     constructor(props) {
         super(props);
         this.Hello = this.Hello.bind(this);
-        console.log('來自 components', props);
     }
-
 
     Hello(preElement) {
         this.props.onChangeValue(preElement.target.value);

@@ -1,6 +1,6 @@
 // action types 
 import * as types from '../constants/ActionType.js';
-console.log('1234567')
+
 // action creators
 export function add() {
     return {
@@ -20,33 +20,26 @@ export function sub() {
 //     context: context
 // })
 
-export const insert = (context) => { 
-    return {
-        type: types.INSERT,
-        context: context
-    }
-}
+export const insert = (context) => ({
+    type: types.INSERT,
+    context: context
+})
 
-export const todo_insert = (name, price) => {
-    return {
-        type: types.TODO_INSERT,
-        name: name,
-        price: price
-    }
-}
+export const todo_insert = (name, price) => ({
+    type: types.TODO_INSERT,
+    name: name,
+    price: price
+})
 
-export const todo_edit = (name, price, originalName) => {
-    return {
-        type: types.TODO_EDIT,
-        name: name,
-        price: price,
-        originalName: originalName
-    }
-}
+export const todo_edit = (name, price, originalName) => ({
+    type: types.TODO_EDIT,
+    name: name,
+    price: price,
+    originalName: originalName
+})
 
-export const todo_delete = (name) => {
-    return {
-        type: types.TODO_DELETE,
-        name: name
-    }
-}
+
+export const todo_delete = (name) => ({
+    type: types.TODO_DELETE,
+    name: name
+})
