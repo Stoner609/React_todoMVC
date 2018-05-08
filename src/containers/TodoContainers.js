@@ -3,16 +3,17 @@ import { todo_insert } from '../actions/actions.js';
 import Todo from '../components/todoComponent.js';
 
 const mapStateToProps = (state) => {
+    console.log('mapStateToProps', state);
     return {
-        ...state
+        value: state.todoReducer
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAdd: (x) => {
-            console.log('Hello Todo containers', x);
-            dispatch(todo_insert(x));
+        onInsert: (name, price) => {
+            console.log('Hello Todo containers', name, price);
+            dispatch(todo_insert(name, price));
         }
     }
 }

@@ -21,18 +21,16 @@ export function sub() {
 // })
 
 export const insert = (context) => { 
-    console.log('來自 action', context);
     return {
         type: types.INSERT,
         context: context
     }
 }
 
-//
-export const todo_insert = (product) => {
-    console.log('Todo action', product);
+export const todo_insert = (name, price) => {
     return {
         type: types.TODO_INSERT,
-        product: product
+        name: name,
+        price: price
     }
-} 
+}

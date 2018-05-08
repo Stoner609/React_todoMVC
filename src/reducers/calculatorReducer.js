@@ -5,7 +5,6 @@ const initialData = {
 }
 
 function calculatorReducer(state = initialData, action) {
-    console.log('A ', state, action.context);
     switch (action.type) {
         case PLUS:
             // return Object.assign({}, state, {

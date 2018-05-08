@@ -5,7 +5,6 @@ const initialData = {
 }
 
 const inputReducer = (state = initialData, action) => {
-    console.log('B ', state, action.context);
     switch (action.type) {
         case INSERT:
             return {
