@@ -1,11 +1,10 @@
 import React from 'react';
 import Add from './Add';
-import List from './List';
+import Item from './Item';
 
 class todo extends React.Component {
     constructor(props) {
         super(props);
-        console.log('來自 components', props);
     }
 
     render() {
@@ -17,17 +16,11 @@ class todo extends React.Component {
                 {
                     this.props.value.map(product => {
                         return (
-                            // <div key={product.name}>{product.name}</div>
-                            // <ProductItem
-                            //     key={product.name}
-                            //     {...product}
-                            //     onDelete={this.onDelete}
-                            //     onEditSubmit={this.onEditSubmit}
-                            // />
-                            <List 
+                            <Item 
                                 key={product.name}
                                 {...product}
                                 onEditSubmit={this.props.onEditSubmit}
+                                onDelete={this.props.onDelete}
                             />
                         )
                     })

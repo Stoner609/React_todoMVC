@@ -1,4 +1,4 @@
-import { TODO_INSERT, TODO_EDIT } from '../constants/ActionType.js';
+import { TODO_INSERT, TODO_EDIT, TODO_DELETE } from '../constants/ActionType.js';
 
 const initialData = [
     {
@@ -43,9 +43,15 @@ const todoReducer = (state = initialData, action) => {
                     product.name = action.name,
                     product.price = action.price
                 }
-                return product
+                return product;
             })
-            return product
+            return product;
+            break;
+        case TODO_DELETE:
+            const filteredProducts = state.filter(product => {
+                return product.name !== action.name;
+            });
+            return filteredProducts;
             break;
         default:
             return state;

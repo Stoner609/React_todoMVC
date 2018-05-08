@@ -43,3 +43,10 @@ export const todo_edit = (name, price, originalName) => {
         originalName: originalName
     }
 }
+
+export const todo_delete = (name) => {
+    return {
+        type: types.TODO_DELETE,
+        name: name
+    }
+}

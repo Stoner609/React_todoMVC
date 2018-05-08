@@ -149,7 +149,7 @@ class App extends Component {
           </div>
         </Router>
         <hr />
-        <h1>Products Manager</h1>
+        {/* <h1>Products Manager</h1>
 
         <AddProduct
           onAdd={this.onAdd}
@@ -165,7 +165,7 @@ class App extends Component {
               />
             )
           })
-        }
+        } */}
       </div>
     );
   }

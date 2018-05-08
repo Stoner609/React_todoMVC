@@ -6,9 +6,9 @@ class App extends React.Component {
 		this.state = {
 			isEdit: false
 		}
-		console.log('App ', props);
 
 		this.onEdit = this.onEdit.bind(this);
+		this.onDelete = this.onDelete.bind(this);
 		this.onEditSubmit = this.onEditSubmit.bind(this);
 	}
 
@@ -18,12 +18,17 @@ class App extends React.Component {
 		});
 	}
 
+	onDelete() {
+		const { onDelete, name } = this.props;
+		onDelete(name);
+	}
+
 	onEditSubmit(event) {
 		event.preventDefault();
 		this.props.onEditSubmit(this.nameInput.value, this.priceInput.value, this.props.name);
 		this.setState({
 			isEdit: false
-		})
+		});
 	}
 
 	render() {
@@ -46,7 +51,7 @@ class App extends React.Component {
 								{` | `}
 								<button onClick={this.onEdit}>Edit</button>
 								{` | `}
-								{/* <button onClick={this.onDelete}>Delete</button> */}
+								<button onClick={this.onDelete}>Delete</button>
 							</div>)
 				}
 			</div>

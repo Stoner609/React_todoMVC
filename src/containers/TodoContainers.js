@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import { todo_insert, todo_edit } from '../actions/actions.js';
+import { todo_insert, todo_edit, todo_delete } from '../actions/actions.js';
 import Todo from '../components/todoComponent.js';
 
 const mapStateToProps = (state) => {
-    console.log('mapStateToProps', state);
     return {
         value: state.todoReducer
     }
@@ -16,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         onEditSubmit: (name, price, originalName) => {
             dispatch(todo_edit(name, price, originalName));
+        },
+        onDelete: (name) => {
+            dispatch(todo_delete(name));
         }
     }
 }
