@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import './App.css';
 
-import AddProduct from './AddProduct';
-import ProductItem from './ProductItem';
+// import AddProduct from './AddProduct';
+// import ProductItem from './ProductItem';
 
 import CalculatorContainers from './containers/CalculatorContainers.js';
 import InputContainers from './containers/InputContainers';

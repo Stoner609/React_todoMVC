@@ -1,6 +1,6 @@
 // action types 
 import * as types from '../constants/ActionType.js';
-
+console.log('1234567')
 // action creators
 export function add() {
     return {
