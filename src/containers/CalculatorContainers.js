@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onClickAdd: () => {
+            console.log('action add');
             dispatch(add());
         },
         onClickSub: () => {

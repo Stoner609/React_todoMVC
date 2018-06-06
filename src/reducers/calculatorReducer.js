@@ -10,6 +10,7 @@ function calculatorReducer(state = initialData, action) {
             // return Object.assign({}, state, {
             //     value: state.value + action.num
             // });
+            console.log('reducer add');
             return {
                 ...state,
                 value: state.value + action.num
