@@ -1,7 +1,8 @@
-import { INSERT } from '../constants/ActionType.js';
+import { INSERT, FETCH_USERS } from '../constants/ActionType.js';
 
 const initialData = {
-    context: ''
+    context: '',
+    users: []
 }
 
 const inputReducer = (state = initialData, action) => {
@@ -10,6 +11,11 @@ const inputReducer = (state = initialData, action) => {
             return {
                 ...state,
                 context: action.context
+            }
+        case FETCH_USERS:
+            return {
+                ...state, 
+                users: action.users
             }
         default:
             return state;

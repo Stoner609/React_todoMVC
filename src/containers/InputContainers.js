@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { insert } from '../actions/actions.js';
+import { insert, getAllUsers } from '../actions/actions.js';
 import Input from '../components/inputComponent';
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onChangeValue: (todoItem) => {
             dispatch(insert(todoItem));
-        }   
+        },   
+        AllUsers: () => {
+            dispatch(getAllUsers());
+        }
     }
 }
 

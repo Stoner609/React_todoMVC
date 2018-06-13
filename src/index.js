@@ -5,8 +5,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import calculatorApp from './reducers/index';
 
 // const logger = (store) => (next) => (action) => {
@@ -14,9 +15,10 @@ import calculatorApp from './reducers/index';
 // }
 
 // const logger = function(store) {
-//     console.log('A-', store);
+//     console.log('A-store ', store);
+//     console.log('A-store.getState() ', store.getState());
 //     return function(next) {
-//         console.log('B-', next);
+//         console.log('B-next ', next);
 //         return function(action) {
 //             console.log(action);
 //             next(action);
@@ -24,11 +26,11 @@ import calculatorApp from './reducers/index';
 //     }
 // }
 
-const middleware = applyMiddleware(logger);
+const middleware = applyMiddleware(thunk, logger);
 
 let store = createStore(calculatorApp, middleware);
-console.log(store);
-console.log('來自 index', store.getState());
+//console.log(store);
+//console.log('來自 index', store.getState());
 
 ReactDOM.render(
     <Provider store={store}>

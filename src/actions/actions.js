@@ -43,3 +43,17 @@ export const todo_delete = (name) => ({
     type: types.TODO_DELETE,
     name: name
 })
+
+export const getAllUsers = () => {
+    return (dispatch) => {
+        dispatch(add());
+        fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then(res => res.json())
+        .then(users => {
+            dispatch({
+                type: types.FETCH_USERS,
+                users: users
+            })
+        })
+    }
+}

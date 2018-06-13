@@ -20,6 +20,11 @@ class Input extends React.Component {
         this.props.onChangeValue(preElement.target.value);
     }
 
+    componentDidMount() {
+        console.log(this.props)
+        this.props.AllUsers();
+    }
+
     render() {
         return (
             <div>
